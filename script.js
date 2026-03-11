@@ -1,4 +1,4 @@
-const revealElements = document.querySelectorAll(".reveal-right");
+const revealElements = document.querySelectorAll(".reveal-right, .reveal-left");
 
 function revealOnScroll(){
 

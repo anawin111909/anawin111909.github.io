@@ -276,7 +276,8 @@ justify-content:flex-start;
 
 width:55%;
 text-align:left;
-padding-left:500px;
+padding-left:200px;
+margin-top:-60px;
 
 }
 .title-QA{
@@ -294,21 +295,28 @@ font-weight:700;
 margin-top:30px;
 letter-spacing:3px;
 font-size:25px;
-text-align: right;
+text-align: left;
 
 }
 
 .QA-skill-picture-box{
 
-width:350px;
+width:930px;
 height:450px;
 
-border:2px solid #00aaff;
+
+margin-left:-140px;
 border-radius:20px;
 
-margin-top:20px;   /* ปรับตำแหน่งขึ้นลง */
+border:2px solid #001d3d;
+
+display:flex;
+align-items:center;
+justify-content:center;
 
 overflow:hidden;
+
+box-shadow:0 0 25px rgba(0,0,0,0.5);
 
 }
 
