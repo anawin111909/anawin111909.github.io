@@ -9,7 +9,9 @@ body{
     );
 
     color:white;
+
 }
+
 
 .Logo{
     font-size:20px;
@@ -139,203 +141,145 @@ color:#0077b5;
 
 /* Unity Developer Section */
 .Dev-skill-section{
-
-padding:100px 8%;
-background:linear-gradient(180deg,#001d3d);
-
+    padding:100px 8%;
+    background:linear-gradient(180deg,#001d3d);
 }
 
-.Dev-skill-container{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
+/* container */
+.dev-skill-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:120px;
 }
 
-.Dev-skill-left{
-
-width:55%;
-padding-left:200px;
-
-}
-
-.Dev-skill-left h1{
-
-font-size:60px;
-margin-bottom:20px;
-text-align: left;
-gap:200px;
-}
-
-.title-dev{
-
-border-left:8px solid #00aaff;
-
-padding-left:15px;
-
-font-size:80px;
-font-weight:700;
-
-}
-
-.Dev-skill-left h3{
-
-margin-top:30px;
-letter-spacing:3px;
-font-size:25px;
-text-align: left;
-
-}
-
-.Dev-skill-left ul{
-
-margin-top:10px;
-padding-left:20px;
-text-align: left;
-
-}
-
-.Dev-skill-left li{
-
-margin-bottom:8px;
-
-}
-
+/* left + right column */
+.Dev-skill-left,
 .Dev-skill-right{
-
-width:40%;
-display:flex;
-justify-content:center;
-
+    flex:1;
+    text-align:left;
 }
 
-.Dev-skill-picture-box{
-
-width:1390px;
-height:450px;
-
-border-radius:20px;
-
-border:2px solid #001d3d;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-overflow:hidden;
-
-box-shadow:0 0 25px rgba(0,0,0,0.5);
-
-}
-.reveal-right{
-    opacity:0;
-    transform:translateX(150px);
-    transition:all 0.8s ease;
+/* left column extra spacing */
+.Dev-skill-left{
+    padding-left:200px;
 }
 
-.reveal-right.active{
-    opacity:1;
-    transform:translateX(0);
+/* title */
+.title-dev{
+    border-left:8px solid #00aaff;
+    padding-left:15px;
+    font-size:60px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
-.Dev-skill-picture-box img{
-
-width:1000%;
-height:100%;
-object-fit:cover;
-
+/* section titles */
+.Dev-skill-left h3,
+.Dev-skill-right h3{
+    margin-top:30px;
+    letter-spacing:3px;
+    font-size:25px;
 }
+
+/* lists */
+.Dev-skill-left ul,
+.Dev-skill-right ul{
+    margin-top:10px;
+    padding-left:20px;
+}
+
+/* list items */
+.Dev-skill-left li,
+.Dev-skill-right li{
+    margin-bottom:8px;
+}
+.Dev-skill-right{
+    flex:1;
+    text-align:left;
+    margin-top:110px;   /* ปรับตัวเลขได้ */
+}
+
+
 /* ------------------ */  
 
 
 /* QA Game Section */
+/* QA SECTION */
 .QA-section{
-
-padding:100px 8%;
-background:linear-gradient(180deg,#001d3d);
-
+    padding:100px 8%;
+    background:linear-gradient(180deg,#001d3d);
 }
+
+/* container */
 .QA-container{
     display:flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 120px 8%;
-    
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:120px;
 }
-.QA-skill-left{
 
-width:40%;
-display:flex;
-justify-content:flex-start;
-
-}
- 
+/* left + right column */
+.QA-skill-left,
 .QA-skill-right{
-
-width:55%;
-text-align:left;
-padding-left:200px;
-margin-top:-60px;
-
+    flex:1;
+    text-align:left;
 }
+
+/* left column spacing */
+.QA-skill-left{
+    padding-left:200px;
+}
+
+/* title */
 .title-QA{
-
-border-left:8px solid #00aaff;
-
-padding-left:10px;
-
-font-size:60px;
-font-weight:700;
-
+    border-left:8px solid #00aaff;
+    padding-left:15px;
+    white-space:nowrap;
+    font-size:60px;
+    font-weight:700;
+    margin-bottom:20px;
 }
+
+/* section titles */
+.QA-skill-left h3,
 .QA-skill-right h3{
-
-margin-top:30px;
-letter-spacing:3px;
-font-size:25px;
-text-align: left;
-
+    margin-top:30px;
+    letter-spacing:3px;
+    font-size:25px;
 }
 
-.QA-skill-picture-box{
-
-width:930px;
-height:450px;
-
-
-margin-left:-140px;
-border-radius:20px;
-
-border:2px solid #001d3d;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-overflow:hidden;
-
-box-shadow:0 0 25px rgba(0,0,0,0.5);
-
+/* lists */
+.QA-skill-left ul,
+.QA-skill-right ul{
+    margin-top:10px;
+    padding-left:20px;
 }
 
-.QA-skill-picture-box img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* list items */
+.QA-skill-left li,
+.QA-skill-right li{
+    margin-bottom:8px;
+}
+
+/* right column position */
+.QA-skill-right{
+    margin-top:115px;
+    
 }
 /* ------------------ */
 
 /* Footer bar */
+footer{
+    width:100%;
+    margin-top:80px;
+}
 .footer-bar{
-
-width:100%;
-padding:20px 0;
-text-align:center;
-background:#071229;
-font-size:14px;
-
-box-shadow:0 6px 25px rgba(0,0,0,0.5);
+    width:100%;
+    padding:20px 0;
+    text-align:center;
+    background:#071229;
+    font-size:14px;
+    box-shadow:0 6px 25px rgba(0,0,0,0.5);
 }
 /* ------------------ */
