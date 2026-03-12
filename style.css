@@ -1,18 +1,23 @@
 /* ---------------- GLOBAL ---------------- */
 
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-        background:linear-gradient(
-        180deg,
-        #001d3d 0%,
-        #00264d 40%,
-        #001d3d 100%
-    );
+background:
+radial-gradient(circle at 50% 20%, rgba(0,170,255,0.15), transparent 60%),
+linear-gradient(
+180deg,
+rgba(0,29,61,0.55),
+rgba(0,38,77,0.65)
+),
+url("Background.png");
 
-    color:white;
-    min-height:100vh;
-    overflow-x:hidden; 
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+color:white;
+min-height:100vh;
+overflow-x:hidden;
 }
 
 /* ---------------- NAVBAR ---------------- */
