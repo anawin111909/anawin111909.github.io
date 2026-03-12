@@ -1,18 +1,18 @@
-const revealElements = document.querySelectorAll(".reveal-right, .reveal-left");
+const revealElements = document.querySelectorAll(".reveal-right");
 
 function revealOnScroll(){
 
-    const triggerBottom = window.innerHeight * 0.85;
+const windowHeight = window.innerHeight;
 
-    revealElements.forEach(el => {
+revealElements.forEach(el => {
 
-        const elementTop = el.getBoundingClientRect().top;
+const elementTop = el.getBoundingClientRect().top;
 
-        if(elementTop < triggerBottom){
-            el.classList.add("active");
-        }
+if(elementTop < windowHeight - 100){
+el.classList.add("active");
+}
 
-    });
+});
 
 }
 

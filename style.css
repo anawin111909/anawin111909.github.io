@@ -280,6 +280,21 @@ max-width:100%;
 border-radius:10px;
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
+
+/* scroll reveal animation */
+.reveal-right{
+opacity:0;
+transform:translateX(120px);
+filter:blur(6px);
+transition:all 0.9s ease;
+}
+
+.reveal-right.active{
+opacity:1;
+transform:translateX(0);
+filter:blur(0);
+}
+
 /* -------- PROJECT BUTTONS -------- */
 
 .project-buttons{
