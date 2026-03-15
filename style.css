@@ -112,6 +112,71 @@ main{
     color:#0077b5;
 }
 
+/* ---------------- Scroll-Button ---------------- */
+.section-nav{
+    position:fixed;
+    right:30px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    z-index:1000;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    border:2px solid #3aa3ff;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.dot.active{
+    background:#3aa3ff;
+    box-shadow:0 0 10px #3aa3ff;
+    animation:pulse 1.5s infinite;
+}
+
+.arrow{
+    font-size:20px;
+    color:#3aa3ff;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.arrow:hover{
+    transform:scale(1.3);
+}
+
+@keyframes pulse{
+
+    0%{transform:scale(1)}
+    50%{transform:scale(1.3)}
+    100%{transform:scale(1)}
+
+}
+
+
+/* ---------------- Mini Game ---------------- */
+
+.mini-game{
+    text-align:center;
+    margin-top:40px;
+}
+
+#gameCanvas{
+    background:#0b1f3a;
+    border:2px solid #3aa3ff;
+    border-radius:12px;
+    display:block;
+    margin:auto;
+    max-width:100%;
+}
+
+
 /* ---------------- DEV + QA SECTION BASE ---------------- */
 
 .Dev-skill-section,
@@ -141,12 +206,17 @@ main{
 }
 
 /* ---------------- TITLES ---------------- */
-
-.title-dev,
-.title-QA{
+.title-role{
     border-left:8px solid #00aaff;
     padding-left:15px;
     font-size:50px;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.title-dev,
+.title-QA{
+    font-size:40px;
     font-weight:700;
     margin-bottom:20px;
 }
@@ -162,11 +232,11 @@ main{
 
 /* ---------------- LIST ---------------- */
 .Dev-skill-right{
-    margin-top:95px;
+    margin-top:190px;
 }
 
 .QA-skill-right{
-    margin-top:95px;
+    margin-top:75px;
 }
 ul{
     margin-top:10px;
