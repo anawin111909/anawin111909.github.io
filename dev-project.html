@@ -10,6 +10,7 @@
 
 <body>
 
+
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar">
   <div class="navbar-container">
@@ -49,9 +50,19 @@ Android • WebGL • Windows • VR • AR • AI
 📧 Trunks.anawin@email.com |
 💼 <a href="https://www.linkedin.com/in/anawin-khlaiboonmee-aa7170331/" target="_blank" class="linkedin">LinkedIn</a>
 </p>
-
 </section>
+<!-- ================= Scroll Button================= -->
+<div class="section-nav">
 
+    <div class="arrow up" id="scrollUp">↑</div>
+
+    <span class="dot active" data-section="hero"></span>
+    <span class="dot" data-section="role"></span>
+    <span class="dot" data-section="experience"></span>
+    <span class="dot" data-section="project"></span>
+
+    <div class="arrow down" id="scrollDown">↓</div>
+</div>
 
 <!-- ================= Project0 ================= -->
 <section class="projects0">
@@ -85,15 +96,13 @@ Android • WebGL • Windows • VR • AR • AI
 </div>
 
     <!-- RIGHT MEDIA -->
-    <div class="project0-media">
-
-        <button class="prev">❮</button>
+    <div class="project-media project0-media">
 
         <div class="media-slider">
 
-            <img src="images/Escape_Game1.png">
-            <img src="images/Escape_Game2.png">
-            <img src="images/Escape_Game3.png">
+            <img class="slide" src="images/Escape_Game1.png">
+            <img class="slide" src="images/Escape_Game2.png">
+            <img class="slide" src="images/Escape_Game3.png">
 
             <!--
             <video controls>
@@ -102,14 +111,15 @@ Android • WebGL • Windows • VR • AR • AI
             -->
         </div>
 
-        <button class="next">❯</button>
-
+        <div class="slider-dots">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+    </div>
     </div>
 
 </div>
-
 </section>
-
 
 <!-- ================= Project1 ================= -->
 <section class="projects1">
@@ -143,28 +153,27 @@ Android • WebGL • Windows • VR • AR • AI
 </div>
 
     <!-- RIGHT MEDIA -->
-    <div class="project1-media">
+<div class="project-media project1-media">
 
-        <button class="prev">❮</button>
+    <div class="media-slider">
+        <img class="slide" src="images/VR_Game1.png">
+        <img class="slide" src="images/VR_Game2.png">
+        <img class="slide" src="images/VR_Game3.png">
 
-        <div class="media-slider">
+        <video class="slide" controls>
+            <source src="Video/vr_project.mp4" type="video/mp4">
+        </video>
+    </div>
 
-            <img src="images/VR_Game1.png">
-            <img src="images/VR_Game2.png">
-            <img src="images/VR_Game3.png">
-
-            <video controls>
-                <source src="Video/vr_project _mini-size.mp4" type="video/mp4">
-            </video>
-
-        </div>
-
-        <button class="next">❯</button>
-
+    <div class="slider-dots">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
     </div>
 
 </div>
-
+</div>
 </section>
 
 <!-- ================= Project3 ================= -->
@@ -200,23 +209,25 @@ Android • WebGL • Windows • VR • AR • AI
 </div>
 
     <!-- RIGHT MEDIA -->
-    <div class="project3-media">
-
-        <button class="prev">❮</button>
+    <div class="project-media project3-media">
 
         <div class="media-slider">
 
-            <img src="images/Ghost_Game1.png">
-            <img src="images/Ghost_Game2.png">
-            <img src="images/Ghost_Game3.png">
+            <img class="slide" src="images/Ghost_Game1.png">
+            <img class="slide" src="images/Ghost_Game2.png">
+            <img class="slide" src="images/Ghost_Game3.png">
 
             <video controls>
                 <source src="Video/unity gameplay demo mini size.mp4" type="video/mp4">
             </video>
 
         </div>
-
-        <button class="next">❯</button>
+        <div class="slider-dots">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+    </div>
 
     </div>
 
@@ -259,23 +270,26 @@ Android • WebGL • Windows • VR • AR • AI
 </div>
 
     <!-- RIGHT MEDIA -->
-    <div class="project2-media">
+    <div class="project-media project2-media">
 
-        <button class="prev">❮</button>
 
         <div class="media-slider">
 
-            <img src="images/AR_Game2.png">
-            <img src="images/AR_Game1.png">
-            <img src="images/AR_Game3.png">
+            <img class="slide" src="images/AR_Game2.png">
+            <img class="slide" src="images/AR_Game1.png">
+            <img class="slide" src="images/AR_Game3.png">
 
             <video controls>
                 <source src="videos/AR_Game_mini_Size.mp4" type="video/mp4">
             </video>
-
         </div>
 
-        <button class="next">❯</button>
+        <div class="slider-dots">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+    </div>
 
     </div>
 
@@ -316,15 +330,13 @@ Android • WebGL • Windows • VR • AR • AI
 </div>
 
     <!-- RIGHT MEDIA -->
-    <div class="project4-media">
-
-        <button class="prev">❮</button>
+    <div class="project-media project4-media">
 
         <div class="media-slider">
 
-            <img src="images/Project3_Game1.png">
-            <img src="images/Project3_Game2.png">
-            <img src="images/Project3_Game3.png">
+            <img class="slide" src="images/Project3_Game1.png">
+            <img class="slide" src="images/Project3_Game2.png">
+            <img class="slide" src="images/Project3_Game3.png">
 
             <!-- <video controls>
                 <source src="videos/project1.mp4" type="video/mp4">
@@ -332,8 +344,12 @@ Android • WebGL • Windows • VR • AR • AI
             -->
 
         </div>
-
-        <button class="next">❯</button>
+        <div class="slider-dots">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+    </div>
 
     </div>
 
@@ -374,23 +390,26 @@ Android • WebGL • Windows • VR • AR • AI
 </div>
 
     <!-- RIGHT MEDIA -->
-    <div class="project5-media">
+    <div class="project-media project5-media">
 
-        <button class="prev">❮</button>
 
         <div class="media-slider">
 
-            <img src="images/UE_Live1.png">
-            <img src="images/UE_Live2.png">
-            <img src="images/UE_Live3.png">
+            <img class="slide" src="images/UE_Live1.png">
+            <img class="slide" src="images/UE_Live2.png">
+            <img class="slide" src="images/UE_Live3.png">
 
             <video controls>
                 <source src="videos/UE_Live mini size.mp4" type="video/mp4">
             </video>
 
         </div>
-
-        <button class="next">❯</button>
+                <div class="slider-dots">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+    </div>
 
     </div>
 
@@ -431,15 +450,13 @@ Android • WebGL • Windows • VR • AR • AI
 </div>
 
     <!-- RIGHT MEDIA -->
-    <div class="project6-media">
-
-        <button class="prev">❮</button>
+    <div class="project-media project6-media">
 
         <div class="media-slider">
 
-            <img src="images/Card_Game1.png">
-            <img src="images/Card_Game2.png">
-            <img src="images/Card_Game3.png">
+            <img class="slide" src="images/Card_Game1.png">
+            <img class="slide" src="images/Card_Game2.png">
+            <img class="slide" src="images/Card_Game3.png">
 
             <!--
             <video controls>
@@ -449,13 +466,16 @@ Android • WebGL • Windows • VR • AR • AI
 
         </div>
 
-        <button class="next">❯</button>
+        <div class="slider-dots">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+    </div>
 
     </div>
 
 </div>
-
-</section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer-bar">
@@ -463,7 +483,7 @@ Android • WebGL • Windows • VR • AR • AI
 <p>© 2026 Anawin Khlaiboonmee | Resume</p>
 
 </footer>
-
+<script src="script.js"></script>
 
 </body>
 </html>

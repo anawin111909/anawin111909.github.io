@@ -284,55 +284,53 @@ el.classList.add("active");
 window.addEventListener("scroll", revealOnScroll);
 
 
-/* Project1  */
-document.addEventListener("DOMContentLoaded", function(){
+// ================= PROJECT1 SLIDER =================
 
-const slider = document.querySelector(".media-slider");
-const images = document.querySelectorAll(".media-slider img");
+document.querySelectorAll(".project-media").forEach(media => {
 
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+    const slider = media.querySelector(".media-slider");
+    const slides = media.querySelectorAll(".slide");
+    const dots = media.querySelectorAll(".slider-dot");
 
-let index = 0;
+    if(!slider || slides.length === 0) return;
 
-function slide(){
-    slider.style.transform = "translateX(-" + (index * 100) + "%)";
-}
+    let index = 0;
 
-next.addEventListener("click", function(){
+    function update(){
+        slider.style.transform = `translateX(-${index * 100}%)`;
 
-    if(index < images.length - 1){
-        index++;
-    }else{
-        index = 0;
+        dots.forEach(dot => dot.classList.remove("active"));
+
+        if(dots[index]){
+            dots[index].classList.add("active");
+        }
     }
 
-    slide();
+    // click dot
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+            index = i;
+            update();
+        });
+    });
+
+    // auto slide
+    let interval = setInterval(() => {
+        index = (index + 1) % slides.length;
+        update();
+    }, 3000);
+
+    // pause on hover
+    media.addEventListener("mouseenter", () => {
+        clearInterval(interval);
+    });
+
+    media.addEventListener("mouseleave", () => {
+        interval = setInterval(() => {
+            index = (index + 1) % slides.length;
+            update();
+        }, 3000);
+    });
 
 });
 
-prev.addEventListener("click", function(){
-
-    if(index > 0){
-        index--;
-    }else{
-        index = images.length - 1;
-    }
-
-    slide();
-
-});
-
-});
-
-setInterval(() => {
-
-    index++;
-
-    if(index >= images.length){
-        index = 0;
-    }
-
-    updateSlide();
-
-},4000);

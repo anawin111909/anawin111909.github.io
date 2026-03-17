@@ -623,33 +623,37 @@ text-decoration:none;
 
 .media-slider{
     display:flex;
-    transition:0.4s;
+    transition: transform 0.4s ease;
     width:100%;
 }
 
 .media-slider img,
 .media-slider video{
     width:100%;
+    flex: 0 0 100%; /* 🔥 ตัวจริง */
     border-radius:8px;
-    flex-shrink:0;   
+}
+/* DOTS */
+.slider-dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:10px;
 }
 
-/* buttons */
-
-.prev, .next{
-    position:absolute;
-    top:45%;
-    transform:translateY(-50%);
-    background:#00000080;
-    border:none;
-    color:white;
-    font-size:20px;
-    padding:10px;
+.slider-dot{
+    width:30px;
+    height:6px;
+    background:#555;
+    border-radius:10px;
     cursor:pointer;
+    transition:0.3s;
 }
 
-.prev{ left:5px }
-.next{ right:5px }
+.slider-dot.active{
+    background:#00c3ff;
+    width:40px;
+}
 
 /* ---------------- Project1 ---------------- */
 .project1-features{
@@ -706,34 +710,41 @@ text-decoration:none;
     overflow:hidden;
 }
 
+/* slider */
 .media-slider{
     display:flex;
-    transition:0.4s;
+    transition: transform 0.4s ease;
+    will-change: transform;
 }
 
 .media-slider img,
 .media-slider video{
     width:100%;
+    flex:0 0 100%;
     border-radius:8px;
 }
 
-/* buttons */
-
-.prev, .next{
-    position:absolute;
-    top:45%;
-    transform:translateY(-50%);
-    background:#00000080;
-    border:none;
-    color:white;
-    font-size:20px;
-    padding:10px;
-    cursor:pointer;
+/* dots */
+.slider-dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:10px;
 }
 
-.prev{ left:5px }
-.next{ right:5px }
+.slider-dot{
+    width:30px;
+    height:6px;
+    background:#555;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
 
+.slider-dot.active{
+    background:#00c3ff;
+    width:40px;
+}
 
 /* ---------------- Project2 ---------------- */
 .project2-features{
@@ -1316,7 +1327,6 @@ text-decoration:none;
 
 .prev{ left:5px }
 .next{ right:5px }
-
 /* ---------------- MOBILE ---------------- */
 
 @media (max-width:768px){
