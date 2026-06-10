@@ -647,6 +647,26 @@ text-decoration:none;
   padding: 0.2rem 0.7rem;
 }
 
+.release-badge-But {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f3ff45;
+  background: rgba(104, 211, 145, 0.1);
+  border: 1px solid rgba(255, 251, 0, 0.35);
+  border-radius: 20px;
+  padding: 0.2rem 0.7rem;
+}
+
+.release-badge-Not {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fc3f26;
+  background: rgba(104, 211, 145, 0.1);
+  border: 1px solid rgba(255, 31, 31, 0.35);
+  border-radius: 20px;
+  padding: 0.2rem 0.7rem;
+}
+
 /* ── Stats Strip ── */
 .project-stats {
   display: flex;
@@ -1546,77 +1566,367 @@ text-decoration:none;
 
 .prev{ left:5px }
 .next{ right:5px }
-/* ---------------- MOBILE ---------------- */
-
-@media (max-width:768px){
-
-/* ---------- NAVBAR ---------- */
-.navbar-container{
-flex-direction:column;
-align-items:center;
-gap:10px;
+/* ── Mobile: < 768px ── */
+@media (max-width: 768px) {
+ 
+  /* ---------- NAVBAR ---------- */
+  .navbar {
+    padding: 12px 16px;
+  }
+ 
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+ 
+  .logo {
+    font-size: 16px;
+  }
+ 
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+ 
+  .nav-links a {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+ 
+  /* ---------- HERO ---------- */
+  .hero {
+    margin-top: 180px;
+    padding: 0 16px;
+  }
+ 
+  .Name {
+    font-size: 32px;
+    padding-left: 0;
+    text-align: center;
+  }
+ 
+  .subtitle,
+  .platforms {
+    font-size: 16px;
+    text-align: center;
+  }
+ 
+  .contact {
+    text-align: center;
+    font-size: 14px;
+  }
+ 
+  /* ---------- SECTION NAV (dots) ---------- */
+  .section-nav {
+    right: 10px;
+    gap: 10px;
+  }
+ 
+  /* ---------- EXPERTISE ---------- */
+  .expertise-section {
+    padding: 60px 16px;
+  }
+ 
+  .expertise-title {
+    font-size: 32px;
+  }
+ 
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+ 
+  .expertise-box {
+    padding: 24px 20px;
+  }
+ 
+  .expertise-box h3 {
+    font-size: 22px;
+  }
+ 
+  /* ---------- CURRENT PROJECT (Escape of Prison) ---------- */
+  .project-section {
+    padding: 30px 16px;
+  }
+ 
+  .project-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+ 
+  .project-title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+ 
+  .project-left h3 {
+    font-size: 20px;
+  }
+ 
+  .project-left p,
+  .project-left li {
+    font-size: 15px;
+  }
+ 
+  .project-right {
+    margin-top: 0;
+    text-align: center;
+  }
+ 
+  .project-right img {
+    max-width: 100%;
+  }
+ 
+  .project-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 23px;
+    gap: 10px;
+  }
+ 
+  .btn-primary,
+  .btn-secondary {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+ 
+  /* ---------- DEV / QA / GAME DESIGN SECTIONS ---------- */
+  .Dev-skill-section,
+  .QA-section,
+  .Game-design-section {
+    padding: 16px;
+  }
+ 
+  .dev-skill-container,
+  .QA-container,
+  .Game-design-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+ 
+  .Dev-skill-right {
+    margin-top: 0;
+  }
+ 
+  .QA-skill-right,
+  .Game-design-skill-right {
+    margin-top: 0;
+  }
+ 
+  .title-role {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+ 
+  .title-dev,
+  .title-QA,
+  .title-Game-design {
+    font-size: 28px;
+  }
+ 
+  li {
+    font-size: 15px;
+  }
+ 
+  /* ---------- INTRO SECTION ---------- */
+  .Introduction-section {
+    padding: 40px 16px;
+  }
+ 
+  .introduction-title {
+    font-size: 32px;
+  }
+ 
+  .profile-img {
+    width: 100%;
+    transform: none;
+  }
+ 
+  .Introduction-left p {
+    font-size: 15px;
+  }
+ 
+  /* ---------- CONTACT ---------- */
+  .Contact-title {
+    font-size: 32px;
+  }
+ 
+  /* ---------- PROJECT0 (Gloria Dungeon card) ---------- */
+  .projects0 {
+    padding: 16px;
+  }
+ 
+  .project0-card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+ 
+  .project0-info {
+    flex: unset;
+    width: 100%;
+  }
+ 
+  .project0-media {
+    max-width: 100%;
+    width: 100%;
+  }
+ 
+  .project-stats {
+    padding: 0.5rem;
+  }
+ 
+  .stat-number {
+    font-size: 1rem;
+  }
+ 
+  .stat-label {
+    font-size: 0.52rem;
+  }
+ 
+  .project-sections-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+ 
+  .project-buttons {
+    justify-content: center;
+  }
+ 
+  .project1-btn {
+    flex: 1;
+    text-align: center;
+    min-width: 120px;
+  }
+ 
+  /* ---------- PROJECT CARDS 1-6, QA1-2 ---------- */
+  .project1-card,
+  .project2-card,
+  .project3-card,
+  .project4-card,
+  .project5-card,
+  .project6-card,
+  .qa-project1-card,
+  .qa-project2-card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+ 
+  .projects1,
+  .projects2,
+  .projects3,
+  .projects4,
+  .projects5,
+  .projects6,
+  .qa-project1,
+  .qa-project2 {
+    padding: 16px;
+  }
+ 
+  .project1-media,
+  .project2-media,
+  .project3-media,
+  .project4-media,
+  .project5-media,
+  .project6-media,
+  .qa-project1-media,
+  .qa-project2-media {
+    width: 100%;
+  }
+ 
+  /* ---------- FOOTER ---------- */
+  .footer-bar {
+    margin-top: 60px;
+    font-size: 12px;
+    padding: 16px;
+  }
+ 
+  /* ---------- IMAGES ---------- */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+ 
 }
-
-.nav-links{
-flex-wrap:wrap;
-justify-content:center;
-gap:8px;
-}
-
-.nav-links a{
-padding:8px 12px;
-font-size:14px;
-}
-
-.logo{
-font-size:18px;
-}
-
-/* ---------- HERO ---------- */
-
-.hero{
-margin-top:170px;
-padding:0 20px;
-font-size:18px;
-}
-
-/* ---------- DEV + QA ---------- */
-
-.dev-skill-container,
-.QA-container{
-flex-direction:column;
-gap:35px;
-}
-
-/* ---------- EXPERTISE ---------- */
-
-.expertise-grid{
-grid-template-columns:1fr;
-gap:20px;
-}
-
-/* ---------- CURRENT PROJECT ---------- */
-
-.project-container{
-flex-direction:column;
-gap:30px;
-}
-
-.project-right{
-margin-top:20px;
-}
-
-}
-
-/* ---------- IMAGES ---------- */
-
-img{
-    max-width:100%;
-    height:auto;
-}
-.project-right img{
-width:100%;
-max-width:700px;
-border-radius:14px;
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
+ 
+/* ── Tablet: 769px - 1024px ── */
+@media (max-width: 1024px) and (min-width: 769px) {
+ 
+  /* Navbar */
+  .nav-links a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+ 
+  /* Hero */
+  .Name {
+    font-size: 40px;
+  }
+ 
+  /* Expertise */
+  .expertise-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+ 
+  .expertise-title {
+    font-size: 38px;
+  }
+ 
+  /* Current Project */
+  .project-container {
+    gap: 40px;
+  }
+ 
+  .project-title {
+    font-size: 38px;
+  }
+ 
+  /* Project0 card */
+  .project0-card {
+    gap: 20px;
+    padding: 24px;
+  }
+ 
+  .project0-media {
+    max-width: 360px;
+  }
+ 
+  .project-sections-row {
+    gap: 0.5rem;
+  }
+ 
+  .project0-features li {
+    font-size: 0.74rem;
+  }
+ 
+  /* Project cards */
+  .project1-card,
+  .project2-card,
+  .project3-card,
+  .project4-card,
+  .project5-card,
+  .project6-card,
+  .qa-project1-card,
+  .qa-project2-card {
+    gap: 24px;
+    padding: 24px;
+  }
+ 
+  /* Title sizes */
+  .title-role {
+    font-size: 40px;
+  }
+ 
+  .title-dev,
+  .title-QA,
+  .title-Game-design {
+    font-size: 32px;
+  }
+ 
 }
