@@ -211,71 +211,48 @@ gameLoop();
 
 /* Scroll Button */
 
-const sections = document.querySelectorAll("#hero, #role, #experience, #project")
-const dots = document.querySelectorAll(".dot")
+const sections = document.querySelectorAll("#hero, #role, #experience, #project");
+const dots = document.querySelectorAll(".dot");
+const scrollUpBtn = document.getElementById("scrollUp");
+const scrollDownBtn = document.getElementById("scrollDown");
 
-window.addEventListener("scroll",()=>{
-
-    let current=""
-
-    sections.forEach(section=>{
-
-        const sectionTop = section.offsetTop
-        const sectionHeight = section.clientHeight
-
-        if(window.scrollY >= sectionTop - sectionHeight/3){
-
-            current = section.getAttribute("id")
-
-        }
-
-    })
-
-    dots.forEach(dot=>{
-
-        dot.classList.remove("active")
-
-        if(dot.dataset.section === current){
-
-            dot.classList.add("active")
-
-        }
-
-    })
-
-})
-
-dots.forEach(dot=>{
-
-    dot.addEventListener("click",()=>{
-
-        const target = document.getElementById(dot.dataset.section)
-
-        window.scrollTo({
-            top:target.offsetTop,
-            behavior:"smooth"
-        })
-
-    })
-
-})
-
-document.getElementById("scrollUp").addEventListener("click", () => {
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
+if (dots.length > 0) {
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute("id");
+      }
     });
-
-});
-document.getElementById("scrollDown").addEventListener("click", () => {
-
-    window.scrollTo({
-        top:document.body.scrollHeight,
-        behavior:"smooth"
+    dots.forEach(dot => {
+      dot.classList.remove("active");
+      if (dot.dataset.section === current) {
+        dot.classList.add("active");
+      }
     });
+  });
 
-});
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      const target = document.getElementById(dot.dataset.section);
+      if (target) window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+    });
+  });
+}
+
+if (scrollUpBtn) {
+  scrollUpBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+if (scrollDownBtn) {
+  scrollDownBtn.addEventListener("click", () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  });
+}
 
 
 /* animation */
@@ -351,3 +328,66 @@ document.querySelectorAll(".project-media").forEach(media => {
 
 });
 
+// ======== GAMES I'VE PLAYED ========
+(function () {
+
+  const ALSO = [
+    { id: 'elden',  name: 'Elden Ring',       sub: 'Action RPG · 120h', status: 'completed', emoji: '⚔️',  bg: '#0e0818', tag: 'Action RPG' },
+    { id: 'ds3',    name: 'Dark Souls III',   sub: 'Action RPG · 80h',  status: 'completed', emoji: '🐉',  bg: '#110808', tag: 'Action RPG' },
+    { id: 'mhw',    name: 'Monster Hunter',   sub: 'Action RPG · 200h', status: 'completed', emoji: '🗡️',  bg: '#081108', tag: 'Action RPG' },
+    { id: 'mc',     name: 'Minecraft',        sub: 'Survival · 400h',   status: 'completed', emoji: '⛏️',  bg: '#0a1505', tag: 'Survival'   },
+    { id: 'forest', name: 'The Forest',       sub: 'Survival · 60h',    status: 'completed', emoji: '🌲',  bg: '#051105', tag: 'Survival'   },
+    { id: 're4',    name: 'Resident Evil 4',  sub: 'Horror · 30h',      status: 'completed', emoji: '🧟',  bg: '#150808', tag: 'Horror'     },
+    { id: 'botw',   name: 'Zelda: BotW',      sub: 'Adventure · 110h',  status: 'completed', emoji: '🗺️',  bg: '#0a1205', tag: 'Adventure'  },
+    { id: 'gow',    name: 'God of War',       sub: 'Adventure · 50h',   status: 'completed', emoji: '🪓',  bg: '#170d05', tag: 'Adventure'  },
+    { id: 'rdr2',   name: 'RDR2',             sub: 'Adventure · 130h',  status: 'completed', emoji: '🤠',  bg: '#150e05', tag: 'Adventure'  },
+    { id: 'portal', name: 'Portal 2',         sub: 'Puzzle · 15h',      status: 'completed', emoji: '🔵',  bg: '#050d0d', tag: 'Puzzle'     },
+    { id: 'sf6',    name: 'Street Fighter 6', sub: 'Fighting · 60h',    status: 'playing',   emoji: '🥊',  bg: '#110511', tag: 'Fighting'   },
+    { id: 'tekken', name: 'Tekken 8',         sub: 'Fighting · 40h',    status: 'playing',   emoji: '👊',  bg: '#110f05', tag: 'Fighting'   },
+  ];
+
+  const row = document.getElementById('chipsRow');
+  if (!row) return;
+
+  const els = {};
+
+  function badgeCls(s) { return s === 'playing' ? 'b-play' : 'b-done'; }
+  function badgeTxt(s) { return s === 'playing' ? 'Playing' : 'Completed'; }
+
+  function makeChip(g) {
+    const el = document.createElement('div');
+    el.className = 'gp-chip';
+    el.innerHTML = `<em>${g.emoji}</em><span>${g.name}</span><span class="ctag">${g.tag}</span>`;
+    el.addEventListener('click', () => toggle(g));
+    return el;
+  }
+
+  function makeCard(g) {
+    const el = document.createElement('div');
+    el.className = 'gp-card-exp';
+    el.innerHTML = `
+      <div class="c-thumb" style="background:${g.bg}">${g.emoji}</div>
+      <div class="c-body">
+        <div class="c-name">${g.name}</div>
+        <div class="c-sub">${g.sub}</div>
+        <span class="now-badge ${badgeCls(g.status)}">${badgeTxt(g.status)}</span>
+      </div>`;
+    el.addEventListener('click', () => toggle(g));
+    return el;
+  }
+
+  function toggle(g) {
+    const current = els[g.id];
+    const isCard  = current.classList.contains('gp-card-exp');
+    const next    = isCard ? makeChip(g) : makeCard(g);
+    row.replaceChild(next, current);
+    els[g.id] = next;
+  }
+
+  ALSO.forEach(g => {
+    const chip = makeChip(g);
+    els[g.id]  = chip;
+    row.appendChild(chip);
+  });
+
+})();

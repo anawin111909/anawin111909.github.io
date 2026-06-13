@@ -1854,6 +1854,239 @@ text-decoration:none;
  
 }
  
+/* --Game've played-- */
+/* ======== GAMES I'VE PLAYED ======== */
+
+.games-played-section {
+  padding: 60px 20px;
+}
+
+.games-played-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.games-played-title {
+  border-left: 8px solid #00aaff;
+  padding-left: 15px;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* -- label -- */
+.section-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5a7fa0;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00aaff;
+  flex-shrink: 0;
+  animation: gpPulse 1.8s infinite;
+}
+
+@keyframes gpPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .3; }
+}
+
+/* -- now grid -- */
+.now-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 2.5rem;
+}
+
+.now-card {
+  background: #0a1f35;
+  border: 1px solid #1a3a5c;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+
+.now-card:hover {
+  border-color: #00aaff55;
+  transform: translateY(-2px);
+}
+
+.now-thumb {
+  width: 100%;
+  height: 160px; 
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+}
+
+.now-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
+  object-position: center;
+  display: block;
+}
+
+.now-body {
+  padding: 10px 13px 14px;
+}
+
+.now-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 3px;
+}
+
+.now-sub {
+  font-size: 11px;
+  color: #5a7fa0;
+  margin-bottom: 8px;
+}
+
+.now-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 10px;
+}
+
+.b-play {
+  background: rgba(55, 138, 221, .12);
+  color: #4fa3e8;
+  border: 1px solid rgba(55, 138, 221, .3);
+}
+
+.b-done {
+  background: rgba(29, 158, 117, .12);
+  color: #1dc87a;
+  border: 1px solid rgba(29, 158, 117, .3);
+}
+
+/* -- divider -- */
+.gp-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.div-line {
+  flex: 1;
+  height: 1px;
+  background: #1a3a5c;
+}
+
+.div-txt {
+  font-size: 12px;
+  color: #3a5a7a;
+}
+
+/* -- chips row -- */
+.chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+/* chip (ย่อ) */
+.gp-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #0b1b35;
+  border: 1px solid #1a3a5c;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #9ecbff;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: border-color .15s, color .15s;
+}
+
+.gp-chip:hover {
+  border-color: #00aaff55;
+  color: white;
+}
+
+.gp-chip em {
+  font-size: 14px;
+  font-style: normal;
+}
+
+.gp-chip .ctag {
+  font-size: 10px;
+  color: #3a5a7a;
+  margin-left: 2px;
+}
+
+/* card (ขยาย) */
+.gp-card-exp {
+  width: 165px;
+  background: #0a1f35;
+  border: 1px solid #00aaff55;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color .2s, transform .2s;
+}
+
+.gp-card-exp:hover {
+  border-color: #00aaff99;
+  transform: translateY(-2px);
+}
+
+.gp-card-exp .c-thumb {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+}
+
+.gp-card-exp .c-body {
+  padding: 10px 12px 13px;
+}
+
+.gp-card-exp .c-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.gp-card-exp .c-sub {
+  font-size: 11px;
+  color: #5a7fa0;
+  margin-bottom: 7px;
+}
+
+/* -- Mobile -- */
+@media (max-width: 768px) {
+  .games-played-title { font-size: 32px; }
+  .now-grid { grid-template-columns: repeat(2, 1fr); }
+  .gp-card-exp { width: 145px; }
+}
+
 /* ── Tablet: 769px - 1024px ── */
 @media (max-width: 1024px) and (min-width: 769px) {
  
