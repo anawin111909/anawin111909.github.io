@@ -181,3 +181,24 @@ document.querySelectorAll(".project-media").forEach(media => {
   });
 
 })();
+(function() {
+  var current = 0;
+  var total = 2;
+ 
+  window.hmSlide = function(dir) {
+    current = (current + dir + total) % total;
+    hmUpdateUI();
+  };
+ 
+  window.hmGoTo = function(i) {
+    current = i;
+    hmUpdateUI();
+  };
+ 
+  function hmUpdateUI() {
+    document.getElementById('hm-track').style.transform = 'translateX(-' + (current * 100) + '%)';
+    document.getElementById('hm-counter').textContent = (current + 1) + ' / ' + total;
+    document.getElementById('hm-tab-0').className = current === 0 ? 'slider-tab active-quick' : 'slider-tab inactive-quick';
+    document.getElementById('hm-tab-1').className = current === 1 ? 'slider-tab active-std'   : 'slider-tab inactive-std';
+  }
+})();
