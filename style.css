@@ -550,6 +550,33 @@ li  { margin-bottom: 8px; font-size: 18px; }
   max-width: 480px;
 }
 
+.project1-card {
+  position: relative; /* ถ้ายังไม่มี */
+}
+
+.package-label {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0ef;
+  background: rgba(0, 238, 255, 0.1);
+  border: 1px solid rgba(0, 238, 255, 0.4);
+  border-radius: 10px;
+  padding: 6px 14px;
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(0, 238, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 238, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.package-label:hover {
+  background: rgba(0, 238, 255, 0.2);
+  box-shadow: 0 0 18px rgba(0, 238, 255, 0.5);
+  color: #fff;
+}
+
 /* ── Slider ── */
 .media-slider {
   display: flex;
@@ -787,6 +814,12 @@ li  { margin-bottom: 8px; font-size: 18px; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
+}
+
+
+.hire-me-card {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5),
+              0 2px 8px rgba(0, 0, 0, 0.3);
 }
  
 /* ── SLIDER ── */
