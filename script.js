@@ -202,3 +202,36 @@ document.querySelectorAll(".project-media").forEach(media => {
     document.getElementById('hm-tab-1').className = current === 1 ? 'slider-tab active-std'   : 'slider-tab inactive-std';
   }
 })();
+
+/* ── QA Card Slider (Havenfall / LifeRun) ── */
+(function () {
+  var cur   = 0;
+  var total = 2;
+  var track = document.getElementById('qa-track');
+  var prev  = document.getElementById('qa-prev');
+  var next  = document.getElementById('qa-next');
+  var dots  = document.querySelectorAll('.qa-dot');
+ 
+  function goTo(i) {
+    cur = Math.max(0, Math.min(i, total - 1));
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+ 
+    /* prev / next opacity */
+    prev.disabled      = cur === 0;
+    prev.style.opacity = cur === 0 ? '0.3' : '1';
+    next.disabled      = cur === total - 1;
+    next.style.opacity = cur === total - 1 ? '0.3' : '1';
+ 
+    /* dots */
+    dots.forEach(function (d, idx) {
+      d.style.background = idx === cur
+        ? 'rgba(99,179,237,0.9)'
+        : 'rgba(99,179,237,0.25)';
+    });
+  }
+ 
+  window.qaSlide = function (dir) { goTo(cur + dir); };
+  window.qaGoTo  = function (i)   { goTo(i); };
+ 
+  goTo(0);
+})();
