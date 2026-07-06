@@ -98,6 +98,31 @@ document.querySelectorAll(".project-media").forEach(media => {
 });
 
 /* ================================================
+   BOOKMARK TAB SWITCHER — Havenfall / LifeRun
+   ================================================ */
+
+function switchTab(id) {
+  /* hide all panels */
+  document.querySelectorAll('.tab-panel').forEach(function (p) {
+    p.classList.remove('active');
+  });
+
+  /* deactivate all tabs */
+  document.querySelectorAll('.bookmark-tab').forEach(function (t) {
+    t.classList.remove('active');
+    t.classList.add('inactive');
+  });
+
+  /* show selected panel */
+  document.getElementById('panel-' + id).classList.add('active');
+
+  /* activate selected tab */
+  var activeTab = document.getElementById('tab-' + id);
+  activeTab.classList.add('active');
+  activeTab.classList.remove('inactive');
+}
+
+/* ================================================
    GAMING EXPERIENCE — chip / card toggle
    ================================================ */
 
