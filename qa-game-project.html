@@ -51,14 +51,17 @@
     <span class="dot" data-section="Project4"></span>
     <div class="arrow down" id="scrollDown">↓</div>
   </div>
-
-  <!-- ================= QA TABBED CARD: Havenfall / LifeRun ================= -->
+<!-- ================= QA TABBED CARD: Havenfall V1.2 / V1.0 / LifeRun ================= -->
   <section id="qa-tabbed" style="padding-top:40px;">
 
     <!-- BOOKMARK TABS -->
     <div class="tabbed-card-wrap" style="padding-bottom:0;">
       <div class="bookmark-tabs">
-        <button class="bookmark-tab active" id="tab-hf" onclick="switchTab('hf')">
+        <button class="bookmark-tab active" id="tab-hf2" onclick="switchTab('hf2')">
+          Havenfall
+          <span class="tab-version">Alpha V1.2.0 · Win</span>
+        </button>
+        <button class="bookmark-tab inactive" id="tab-hf1" onclick="switchTab('hf1')">
           Havenfall
           <span class="tab-version">Alpha V1.0.0 · Win</span>
         </button>
@@ -75,8 +78,8 @@
                   box-shadow:0 10px 25px rgba(0,0,0,0.4);
                   border:1px solid rgba(99,179,237,0.15);">
 
-        <!-- ── PANEL 1: Havenfall ── -->
-        <div class="tab-panel active" id="panel-hf">
+        <!-- ── PANEL 1: Havenfall Alpha V0.1.2 (latest) ── -->
+        <div class="tab-panel active" id="panel-hf2">
           <div class="project1-card" style="background:transparent; box-shadow:none; border:none;">
 
             <div class="project1-info">
@@ -84,7 +87,104 @@
                 <span class="project-tag">Game QA Case Study</span>
                 <span class="release-badge-But">Approved with Minor Issues</span>
               </div>
-              <h2>Havenfall <span style="font-size:0.6em; color:#5a7fa0;">(formerly LifeRun)</span></h2>
+              <h2>Havenfall <span style="font-size:0.6em; color:#5a7fa0;">(Alpha V1.2.0)</span></h2>
+              <p class="project-credit">
+                Game developed by <a href="https://andreicl.itch.io/liferun" target="_blank">Draghici Andrei</a>
+                — tested independently as a QA practice project.
+              </p>
+              <p class="project-description">
+                Havenfall Alpha V1.2.0 is a top-down tower-defense survival game tested on Windows (Gaming Laptop).
+                Testing covered Main Menu, Gameplay System, UI, Audio, Shader, Performance, Co-op, and Online via
+                Exploratory, Smoke, and Regression Testing across a 3-day test period. The build shows clear
+                improvement in visual presentation, though core gameplay issues from the previous version persist.
+              </p>
+
+              <div class="project-sections-row">
+                <div class="project-section">
+                  <h4>Testing Scope</h4>
+                  <ul class="project0-features">
+                    <li>Main Menu &amp; Online</li>
+                    <li>Gameplay System</li>
+                    <li>UI</li>
+                    <li>Audio</li>
+                    <li>Shader</li>
+                    <li>Performance</li>
+                    <li>Co-op</li>
+                  </ul>
+                </div>
+                <div class="project-section">
+                  <h4>Testing Types</h4>
+                  <ul class="project0-features">
+                    <li>Exploratory Testing</li>
+                    <li>Smoke Testing</li>
+                    <li>Regression Testing</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="project-stats">
+                <div class="stat-item"><span class="stat-number">10</span><span class="stat-label">Bugs Found</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-number">3</span><span class="stat-label">S1 Critical</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-number">0</span><span class="stat-label">Perf Issues</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-number">3</span><span class="stat-label">Days Tested</span></div>
+              </div>
+
+              <div class="project-section-wide">
+                <h4>Bug Severity</h4>
+                <div class="severity-row">
+                  <span class="severity-badge s1">S1 Critical: 3</span>
+                  <span class="severity-badge s2">S2 Medium: 6</span>
+                  <span class="severity-badge s3">S3 Minor: 1</span>
+                </div>
+                <div class="key-finding">
+                  Three S1 Critical issues persist: Online Mode connection failure (MN-01), character not revived
+                  after wave completion (GP-01), and AI buddy placing towers on invalid locations in co-op (GP-04).
+                  Audio and Performance passed with zero bugs.
+                </div>
+              </div>
+
+              <p class="project-tools">
+                <strong>Tools:</strong> MS Word • Snipping Tool • Claude AI • Windows 11
+                &nbsp;|&nbsp;
+                <strong>Platform:</strong> Windows • Gaming Laptop
+                &nbsp;|&nbsp;
+                <strong>Period:</strong> 8–10 Jul 2026
+              </p>
+            </div>
+
+            <div class="project-media project1-media QA-media">
+              <div class="media-slider">
+                <img class="slide" src="images/QA-Image/HFTest01.png" alt="Havenfall V0.1.2 screenshot 1">
+                <img class="slide" src="images/QA-Image/HFTest02.png" alt="Havenfall V0.1.2 screenshot 2">
+              </div>
+              <div class="slider-dots">
+                <span class="slider-dot active"></span>
+                <span class="slider-dot"></span>
+              </div>
+              <div class="QAproject-buttons">
+                <a href="https://andreicl.itch.io/liferun" class="project1-btn">Play Game</a>
+                <a href="https://drive.google.com/drive/folders/1gFlmxqM61AdmvOIbPQb9ID00z7Blg_HT?usp=sharing"
+                   class="project1-btn primary-btn">📄 Test Document</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- ── end PANEL 1 ── -->
+
+        <!-- ── PANEL 2: Havenfall Alpha V1.0.0 ── -->
+        <div class="tab-panel" id="panel-hf1">
+          <div class="project1-card" style="background:transparent; box-shadow:none; border:none;">
+
+            <div class="project1-info">
+              <div class="project-tag-row">
+                <span class="project-tag">Game QA Case Study</span>
+                <span class="release-badge-But">Approved with Minor Issues</span>
+              </div>
+              <h2>Havenfall <span style="font-size:0.6em; color:#5a7fa0;">(Alpha V1.0.0)</span></h2>
               <p class="project-credit">
                 Game developed by <a href="https://andreicl.itch.io/liferun" target="_blank">Draghici Andrei</a>
                 — tested independently as a QA practice project.
@@ -144,8 +244,8 @@
 
             <div class="project-media project1-media QA-media">
               <div class="media-slider">
-                <img class="slide" src="images/QA-Image/HFTest01.png" alt="Havenfall screenshot 1">
-                <img class="slide" src="images/QA-Image/HFTest02.png" alt="Havenfall screenshot 2">
+                <img class="slide" src="images/QA-Image/HFTest01.png" alt="Havenfall V1.0 screenshot 1">
+                <img class="slide" src="images/QA-Image/HFTest02.png" alt="Havenfall V1.0 screenshot 2">
               </div>
               <div class="slider-dots">
                 <span class="slider-dot active"></span>
@@ -160,9 +260,9 @@
 
           </div>
         </div>
-        <!-- ── end PANEL 1 ── -->
+        <!-- ── end PANEL 2 ── -->
 
-        <!-- ── PANEL 2: LifeRun ── -->
+        <!-- ── PANEL 3: LifeRun ── -->
         <div class="tab-panel" id="panel-lr">
           <div class="project1-card" style="background:transparent; box-shadow:none; border:none;">
 
@@ -252,7 +352,7 @@
 
           </div>
         </div>
-        <!-- ── end PANEL 2 ── -->
+        <!-- ── end PANEL 3 ── -->
 
       </div>
     </div>

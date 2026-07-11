@@ -98,7 +98,8 @@ document.querySelectorAll(".project-media").forEach(media => {
 });
 
 /* ================================================
-   BOOKMARK TAB SWITCHER — Havenfall / LifeRun
+   BOOKMARK TAB SWITCHER
+   Supports any number of tabs/panels via data-tab
    ================================================ */
 
 function switchTab(id) {
@@ -114,12 +115,15 @@ function switchTab(id) {
   });
 
   /* show selected panel */
-  document.getElementById('panel-' + id).classList.add('active');
+  var panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
 
   /* activate selected tab */
   var activeTab = document.getElementById('tab-' + id);
-  activeTab.classList.add('active');
-  activeTab.classList.remove('inactive');
+  if (activeTab) {
+    activeTab.classList.add('active');
+    activeTab.classList.remove('inactive');
+  }
 }
 
 /* ================================================
