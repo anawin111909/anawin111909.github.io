@@ -166,7 +166,7 @@
               </div>
               <div class="QAproject-buttons">
                 <a href="https://andreicl.itch.io/liferun" class="project1-btn">Play Game</a>
-                <a href="https://drive.google.com/drive/folders/1gFlmxqM61AdmvOIbPQb9ID00z7Blg_HT?usp=sharing"
+                <a href="https://drive.google.com/drive/folders/1ROxYSICECir3khUg6BNgLzMSx4Q8-dCM?usp=sharing"
                    class="project1-btn primary-btn">📄 Test Document</a>
               </div>
             </div>
@@ -359,90 +359,219 @@
 
   </section>
 
-  <!-- ================= QA PROJECT: CoolWaVe ================= -->
-  <section class="projects1" id="Project2">
-    <div class="project1-card">
-      <div class="project1-info">
-        <div class="project-tag-row">
-          <span class="project-tag">Game QA Case Study</span>
-          <span class="release-badge-Not">Not Recommended for Release</span>
-        </div>
-        <h2>CoolWaVe</h2>
-        <p class="project-credit">
-          Game developed by <a href="https://cartien.itch.io/coolwave-alpha-1" target="_blank">Cartien</a>
-          — tested independently as a QA practice project.
-        </p>
-        <p class="project-description">
-          CoolWaVe is a wave-based FPS survival game tested on Windows 11 (Beta 1.0, Gaming Laptop).
-          Testing covered Gameplay System, Menu/UI, Audio, Rendering, and Animation via Exploratory
-          and Smoke Testing across a 2-day test period. Two S1 Critical issues significantly affect
-          core gameplay balance and enemy AI behavior.
-        </p>
-        <div class="project-sections-row">
-          <div class="project-section">
-            <h4>Testing Scope</h4>
-            <ul class="project0-features">
-              <li>Gameplay System</li>
-              <li>Menu / UI</li>
-              <li>Audio</li>
-              <li>Rendering</li>
-              <li>Animation</li>
-            </ul>
-          </div>
-          <div class="project-section">
-            <h4>Testing Types</h4>
-            <ul class="project0-features">
-              <li>Exploratory Testing</li>
-              <li>Smoke Testing</li>
-            </ul>
-          </div>
-        </div>
-        <div class="project-stats">
-          <div class="stat-item"><span class="stat-number">14</span><span class="stat-label">Bugs Found</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">S1 Critical</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-item"><span class="stat-number">0</span><span class="stat-label">Perf Issues</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Days Tested</span></div>
-        </div>
-        <div class="project-section-wide">
-          <h4>Bug Severity</h4>
-          <div class="severity-row">
-            <span class="severity-badge s1">S1 Critical: 2</span>
-            <span class="severity-badge s2">S2 Medium: 9</span>
-            <span class="severity-badge s3">S3 Low: 3</span>
-          </div>
-          <div class="key-finding">
-            Two S1 Critical issues affect core gameplay: players can bypass weapon cooldown by rapidly
-            switching weapons (GP-03), and enemy AI gets permanently stuck on walls while chasing
-            the player (GP-08), breaking combat balance and challenge.
-          </div>
-        </div>
-        <p class="project-tools">
-          <strong>Tools:</strong> MS Word • Snipping Tool • Claude AI • Windows 11
-          &nbsp;|&nbsp;
-          <strong>Platform:</strong> Windows 11 • Gaming Laptop
-          &nbsp;|&nbsp;
-          <strong>Period:</strong> 30 Jun – 1 Jul 2026
-        </p>
-      </div>
-      <div class="project-media project1-media QA-media">
-        <div class="media-slider">
-          <img class="slide" src="images/QA-Image/CWTest01.png" alt="CoolWaVe screenshot 1">
-          <img class="slide" src="images/QA-Image/CWTest02.png" alt="CoolWaVe screenshot 2">
-        </div>
-        <div class="slider-dots">
-          <span class="slider-dot active"></span>
-          <span class="slider-dot"></span>
-        </div>
-        <div class="QAproject-buttons">
-          <a href="https://cartien.itch.io/coolwave-alpha-1" class="project1-btn">Play Game</a>
-          <a href="https://drive.google.com/drive/folders/1L07mXkwgGDhfxDGFpwuJmeZBEjWZ0fZN?usp=sharing"
-             class="project1-btn primary-btn">📄 Test Document</a>
-        </div>
+ <!-- ================= QA TABBED CARD: CoolWaVe ================= -->
+  <section id="Project2" style="padding-top:40px;">
+
+    <!-- BOOKMARK TABS -->
+    <div class="tabbed-card-wrap" style="padding-bottom:0;">
+      <div class="bookmark-tabs">
+        <button class="bookmark-tab active" id="tab-cw2" onclick="switchTabCW('cw2')">
+          CoolWaVe
+          <span class="tab-version">Beta 1.1 · Win</span>
+        </button>
+        <button class="bookmark-tab inactive" id="tab-cw1" onclick="switchTabCW('cw1')">
+          CoolWaVe
+          <span class="tab-version">Beta 1.0 · Win</span>
+        </button>
       </div>
     </div>
+
+    <!-- CARD WRAPPER -->
+    <div class="tabbed-card-wrap">
+      <div style="background:#0a1f35; border-radius:0 12px 12px 12px;
+                  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+                  border:1px solid rgba(99,179,237,0.15);">
+
+        <!-- ── PANEL 1: CoolWaVe Beta 1.1 (latest) ── -->
+        <div class="tab-panel-cw active" id="panel-cw2">
+          <div class="project1-card" style="background:transparent; box-shadow:none; border:none;">
+
+            <div class="project1-info">
+              <div class="project-tag-row">
+                <span class="project-tag">Game QA Case Study</span>
+                <span class="release-badge-Not">Not Recommended for Release</span>
+              </div>
+              <h2>CoolWaVe <span style="font-size:0.6em; color:#5a7fa0;">(Beta 1.1)</span></h2>
+              <p class="project-credit">
+                Game developed by <a href="https://cartien.itch.io/coolwave-alpha-1" target="_blank">Cartien</a>
+                — tested independently as a QA practice project.
+              </p>
+              <p class="project-description">
+                CoolWaVe Beta 1.1 is a wave-based FPS survival game tested on Windows 11 (Gaming Laptop).
+                Testing covered Gameplay System, UI, Audio, Animation, Performance, and Shader via Exploratory,
+                Smoke, Regression, and Destructive Testing across a 3-day test period. The build shows visible
+                progress in UI polish and new content, but core gameplay issues remain unresolved.
+              </p>
+
+              <div class="project-sections-row">
+                <div class="project-section">
+                  <h4>Testing Scope</h4>
+                  <ul class="project0-features">
+                    <li>Gameplay System</li>
+                    <li>UI</li>
+                    <li>Audio</li>
+                    <li>Animation</li>
+                    <li>Performance</li>
+                    <li>Shader</li>
+                  </ul>
+                </div>
+                <div class="project-section">
+                  <h4>Testing Types</h4>
+                  <ul class="project0-features">
+                    <li>Exploratory Testing</li>
+                    <li>Smoke Testing</li>
+                    <li>Regression Testing</li>
+                    <li>Destructive Testing</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="project-stats">
+                <div class="stat-item"><span class="stat-number">13</span><span class="stat-label">Bugs Found</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">S1 Critical</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-number">0</span><span class="stat-label">Perf Issues</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-number">3</span><span class="stat-label">Days Tested</span></div>
+              </div>
+
+              <div class="project-section-wide">
+                <h4>Bug Severity</h4>
+                <div class="severity-row">
+                  <span class="severity-badge s1">S1 Critical: 2</span>
+                  <span class="severity-badge s2">S2 Medium: 10</span>
+                  <span class="severity-badge s3">S3 Low: 1</span>
+                </div>
+                <div class="key-finding">
+                  Two S1 issues persist: weapon cooldown bypass via rapid switching (GP-03) breaks combat balance,
+                  and player falls through the map after the sprint-lock issue (GP-08), forcing a restart.
+                  UI and Performance passed with zero bugs.
+                </div>
+              </div>
+
+              <p class="project-tools">
+                <strong>Tools:</strong> MS Word • Snipping Tool • Claude AI • Windows 11
+                &nbsp;|&nbsp;
+                <strong>Platform:</strong> Windows 11 • Gaming Laptop
+                &nbsp;|&nbsp;
+                <strong>Period:</strong> 11–13 Jul 2026
+              </p>
+            </div>
+
+            <div class="project-media project1-media QA-media">
+              <div class="media-slider">
+                <img class="slide" src="images/QA-Image/CWTest01.png" alt="CoolWaVe Beta 1.1 screenshot 1">
+                <img class="slide" src="images/QA-Image/CWTest02.png" alt="CoolWaVe Beta 1.1 screenshot 2">
+              </div>
+              <div class="slider-dots">
+                <span class="slider-dot active"></span>
+                <span class="slider-dot"></span>
+              </div>
+              <div class="QAproject-buttons">
+                <a href="https://cartien.itch.io/coolwave-alpha-1" class="project1-btn">Play Game</a>
+                <a href="https://drive.google.com/drive/folders/1L07mXkwgGDhfxDGFpwuJmeZBEjWZ0fZN?usp=sharing"
+                   class="project1-btn primary-btn">📄 Test Document</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- ── end PANEL 1 ── -->
+
+        <!-- ── PANEL 2: CoolWaVe Beta 1.0 ── -->
+        <div class="tab-panel-cw" id="panel-cw1">
+          <div class="project1-card" style="background:transparent; box-shadow:none; border:none;">
+
+            <div class="project1-info">
+              <div class="project-tag-row">
+                <span class="project-tag">Game QA Case Study</span>
+                <span class="release-badge-Not">Not Recommended for Release</span>
+              </div>
+              <h2>CoolWaVe <span style="font-size:0.6em; color:#5a7fa0;">(Beta 1.0)</span></h2>
+              <p class="project-credit">
+                Game developed by <a href="https://cartien.itch.io/coolwave-alpha-1" target="_blank">Cartien</a>
+                — tested independently as a QA practice project.
+              </p>
+              <p class="project-description">
+                CoolWaVe is a wave-based FPS survival game tested on Windows 11 (Beta 1.0, Gaming Laptop).
+                Testing covered Gameplay System, Menu/UI, Audio, Rendering, and Animation via Exploratory
+                and Smoke Testing across a 2-day test period. Two S1 Critical issues significantly affect
+                core gameplay balance and enemy AI behavior.
+              </p>
+              <div class="project-sections-row">
+                <div class="project-section">
+                  <h4>Testing Scope</h4>
+                  <ul class="project0-features">
+                    <li>Gameplay System</li>
+                    <li>Menu / UI</li>
+                    <li>Audio</li>
+                    <li>Rendering</li>
+                    <li>Animation</li>
+                  </ul>
+                </div>
+                <div class="project-section">
+                  <h4>Testing Types</h4>
+                  <ul class="project0-features">
+                    <li>Exploratory Testing</li>
+                    <li>Smoke Testing</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="project-stats">
+                <div class="stat-item"><span class="stat-number">14</span><span class="stat-label">Bugs Found</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">S1 Critical</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-number">0</span><span class="stat-label">Perf Issues</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Days Tested</span></div>
+              </div>
+              <div class="project-section-wide">
+                <h4>Bug Severity</h4>
+                <div class="severity-row">
+                  <span class="severity-badge s1">S1 Critical: 2</span>
+                  <span class="severity-badge s2">S2 Medium: 9</span>
+                  <span class="severity-badge s3">S3 Low: 3</span>
+                </div>
+                <div class="key-finding">
+                  Two S1 Critical issues affect core gameplay: players can bypass weapon cooldown by rapidly
+                  switching weapons (GP-03), and enemy AI gets permanently stuck on walls while chasing
+                  the player (GP-08), breaking combat balance and challenge.
+                </div>
+              </div>
+              <p class="project-tools">
+                <strong>Tools:</strong> MS Word • Snipping Tool • Claude AI • Windows 11
+                &nbsp;|&nbsp;
+                <strong>Platform:</strong> Windows 11 • Gaming Laptop
+                &nbsp;|&nbsp;
+                <strong>Period:</strong> 30 Jun – 1 Jul 2026
+              </p>
+            </div>
+
+            <div class="project-media project1-media QA-media">
+              <div class="media-slider">
+                <img class="slide" src="images/QA-Image/CWTest01.png" alt="CoolWaVe Beta 1.0 screenshot 1">
+                <img class="slide" src="images/QA-Image/CWTest02.png" alt="CoolWaVe Beta 1.0 screenshot 2">
+              </div>
+              <div class="slider-dots">
+                <span class="slider-dot active"></span>
+                <span class="slider-dot"></span>
+              </div>
+              <div class="QAproject-buttons">
+                <a href="https://cartien.itch.io/coolwave-alpha-1" class="project1-btn">Play Game</a>
+                <a href="https://drive.google.com/drive/folders/1L07mXkwgGDhfxDGFpwuJmeZBEjWZ0fZN?usp=sharing"
+                   class="project1-btn primary-btn">📄 Test Document</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- ── end PANEL 2 ── -->
+
+      </div>
+    </div>
+
   </section>
 
   <!-- ================= QA PROJECT: Battle Babe ================= -->

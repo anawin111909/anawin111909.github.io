@@ -259,6 +259,15 @@ main { flex: 1; }
   }
 }
 
+/* ── CoolWaVe panels (ใช้ class แยกเพื่อไม่ชนกับ Havenfall) ── */
+.tab-panel-cw {
+  display: none;
+}
+
+.tab-panel-cw.active {
+  display: block;
+}
+
 
 /* ================================================
    ROLE / SKILL SECTION

@@ -98,27 +98,43 @@ document.querySelectorAll(".project-media").forEach(media => {
 });
 
 /* ================================================
-   BOOKMARK TAB SWITCHER
-   Supports any number of tabs/panels via data-tab
+   BOOKMARK TAB SWITCHER — Generic
+   ใช้ได้กับทุก card ที่มี tab
    ================================================ */
 
+/* ── Havenfall tabs (panel-hf2, panel-hf1, panel-lr) ── */
 function switchTab(id) {
-  /* hide all panels */
-  document.querySelectorAll('.tab-panel').forEach(function (p) {
+  document.querySelectorAll('#qa-tabbed .tab-panel').forEach(function (p) {
     p.classList.remove('active');
   });
-
-  /* deactivate all tabs */
-  document.querySelectorAll('.bookmark-tab').forEach(function (t) {
+  document.querySelectorAll('#qa-tabbed .bookmark-tab').forEach(function (t) {
     t.classList.remove('active');
     t.classList.add('inactive');
   });
 
-  /* show selected panel */
   var panel = document.getElementById('panel-' + id);
   if (panel) panel.classList.add('active');
 
-  /* activate selected tab */
+  var activeTab = document.getElementById('tab-' + id);
+  if (activeTab) {
+    activeTab.classList.add('active');
+    activeTab.classList.remove('inactive');
+  }
+}
+
+/* ── CoolWaVe tabs (panel-cw1, panel-cw2 ...) ── */
+function switchTabCW(id) {
+  document.querySelectorAll('#Project2 .tab-panel-cw').forEach(function (p) {
+    p.classList.remove('active');
+  });
+  document.querySelectorAll('#Project2 .bookmark-tab').forEach(function (t) {
+    t.classList.remove('active');
+    t.classList.add('inactive');
+  });
+
+  var panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+
   var activeTab = document.getElementById('tab-' + id);
   if (activeTab) {
     activeTab.classList.add('active');
