@@ -305,6 +305,7 @@ main { flex: 1; }
   font-size: 50px;
   font-weight: 700;
   margin-bottom: 40px;
+  white-space: nowrap;
 }
 
 .title-dev,
@@ -313,6 +314,8 @@ main { flex: 1; }
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
+  white-space: nowrap;
+  color: #4fd1ff;
 }
 
 .Dev-skill-section h3,
@@ -321,9 +324,10 @@ main { flex: 1; }
   margin-top: 30px;
   letter-spacing: 3px;
   font-size: 24px;
+  color: #7fb8e0;
 }
 
-.Dev-skill-right  { margin-top: 190px; }
+.Dev-skill-right  { margin-top: 195px; }
 .QA-skill-right,
 .Game-design-skill-right { margin-top: 75px; }
 
@@ -1319,10 +1323,10 @@ li  { margin-bottom: 8px; font-size: 18px; }
   .Dev-skill-right,
   .QA-skill-right,
   .Game-design-skill-right { margin-top: 0; }
-  .title-role  { font-size: 32px; margin-bottom: 24px; }
+  .title-role  { font-size: 32px; margin-bottom: 24px; white-space: normal; }
   .title-dev,
   .title-QA,
-  .title-Game-design { font-size: 28px; }
+  .title-Game-design { font-size: 28px; white-space: normal; }
   li { font-size: 15px; }
 
   /* Intro */
