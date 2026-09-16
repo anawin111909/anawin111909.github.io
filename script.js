@@ -257,6 +257,8 @@ function switchTabCW(id) {
   var next  = document.getElementById('qa-next');
   var dots  = document.querySelectorAll('.qa-dot');
  
+  if (!track || !prev || !next) return;
+ 
   function goTo(i) {
     cur = Math.max(0, Math.min(i, total - 1));
     track.style.transform = 'translateX(-' + (cur * 100) + '%)';
@@ -279,4 +281,171 @@ function switchTabCW(id) {
   window.qaGoTo  = function (i)   { goTo(i); };
  
   goTo(0);
+})();
+
+/* ================================================
+   DESIGN PROTOTYPE — modal popup toggle
+   ================================================ */
+(function () {
+  var overlay  = document.getElementById('designModalOverlay');
+  var openBtn  = document.getElementById('designPrototypeBtn');
+  var closeBtn = document.getElementById('designModalClose');
+
+  if (!overlay || !openBtn || !closeBtn) return;
+
+  function openModal() { overlay.classList.add('open'); }
+  function closeModal() { overlay.classList.remove('open'); }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+
+  /* click on the dark backdrop (not the card itself) closes it */
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  /* Esc key closes it */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+})();
+
+/* ================================================
+   DESIGN SHOWCASE — slider (wireframe ⇄ in-game)
+   ================================================ */
+(function () {
+  var cur   = 0;
+  var total = 2;
+  var track   = document.getElementById('designTrack');
+  var prevBtn = document.getElementById('designPrev');
+  var nextBtn = document.getElementById('designNext');
+  var dots    = document.querySelectorAll('.design-dot');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function goTo(i) {
+    cur = Math.max(0, Math.min(i, total - 1));
+    track.style.transform = 'translateX(-' + (cur * 50) + '%)';
+
+    prevBtn.disabled      = cur === 0;
+    prevBtn.style.opacity = cur === 0 ? '0.3' : '1';
+    nextBtn.disabled      = cur === total - 1;
+    nextBtn.style.opacity = cur === total - 1 ? '0.3' : '1';
+
+    dots.forEach(function (d, idx) {
+      d.classList.toggle('active', idx === cur);
+    });
+
+    /* the icon a pinned/open tooltip points at is now hidden
+       on the other slide — close it rather than leave it stuck */
+    var tip = document.getElementById('sharedTooltip');
+    if (tip) tip.classList.remove('show');
+    document.querySelectorAll('.design-icon.pinned').forEach(function (b) {
+      b.classList.remove('pinned');
+    });
+  }
+
+  prevBtn.addEventListener('click', function () { goTo(cur - 1); });
+  nextBtn.addEventListener('click', function () { goTo(cur + 1); });
+  dots.forEach(function (d, i) {
+    d.addEventListener('click', function () { goTo(i); });
+  });
+
+  goTo(0);
+})();
+
+/* ================================================
+   DESIGN SHOWCASE — icon hotspot tooltips
+   One shared tooltip element, positioned in JS based on
+   each icon's real on-screen location. It lives outside
+   the slide viewport's overflow:hidden, and its position
+   is clamped on all sides, so it never gets clipped no
+   matter how close the icon is to any edge of the image.
+   Hover = preview. Click = pin it open. Click elsewhere,
+   or the same icon again, closes it.
+   ================================================ */
+(function () {
+  var wrapper      = document.querySelector('.showcase-slider-wrapper');
+  var tooltip      = document.getElementById('sharedTooltip');
+  var tooltipTitle = document.getElementById('sharedTooltipTitle');
+  var tooltipDesc  = document.getElementById('sharedTooltipDesc');
+  var icons        = document.querySelectorAll('.design-icon');
+  var pinnedBtn    = null;
+
+  if (!wrapper || !tooltip || !icons.length) return;
+
+  function showTooltipFor(btn) {
+    tooltipTitle.textContent = btn.getAttribute('data-tip-title') || '';
+    tooltipDesc.textContent  = btn.getAttribute('data-tip-desc') || '';
+
+    tooltip.classList.add('show'); // make visible first so we can measure it
+    var margin  = 10;
+    var wrapRect = wrapper.getBoundingClientRect();
+    var iconRect = btn.getBoundingClientRect();
+    var tw = tooltip.offsetWidth;
+    var th = tooltip.offsetHeight;
+
+    var iconCenterX = iconRect.left + iconRect.width / 2 - wrapRect.left;
+    var iconTop     = iconRect.top - wrapRect.top;
+    var iconBottom  = iconRect.bottom - wrapRect.top;
+
+    /* horizontal: center on the icon, then clamp so it never
+       overflows the left/right edge of the slider wrapper */
+    var left = iconCenterX - tw / 2;
+    left = Math.max(margin, Math.min(left, wrapRect.width - tw - margin));
+
+    /* vertical: prefer above the icon; flip below if there's
+       not enough room above */
+    var top;
+    if (iconTop - th - 14 < margin) {
+      top = iconBottom + 14;
+    } else {
+      top = iconTop - th - 14;
+    }
+
+    tooltip.style.left = left + 'px';
+    tooltip.style.top  = top + 'px';
+  }
+
+  function hideTooltip() {
+    tooltip.classList.remove('show');
+  }
+
+  function unpin() {
+    if (!pinnedBtn) return;
+    pinnedBtn.classList.remove('pinned');
+    pinnedBtn = null;
+  }
+
+  icons.forEach(function (btn) {
+    btn.addEventListener('mouseenter', function () {
+      showTooltipFor(btn);
+    });
+
+    btn.addEventListener('mouseleave', function () {
+      if (pinnedBtn) {
+        showTooltipFor(pinnedBtn);
+      } else {
+        hideTooltip();
+      }
+    });
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (pinnedBtn === btn) {
+        unpin();
+        hideTooltip();
+      } else {
+        unpin();
+        pinnedBtn = btn;
+        btn.classList.add('pinned');
+        showTooltipFor(btn);
+      }
+    });
+  });
+
+  document.addEventListener('click', function () {
+    unpin();
+    hideTooltip();
+  });
 })();

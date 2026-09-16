@@ -189,11 +189,14 @@ Game Design • Level Design • Unity • Playtesting
         <p>
         👉 Currently iterating on gameplay systems, level design, and player experience through playtesting.
     </p>
+
     <div class="project-buttons showcase-buttons">
 
 <a href="https://pt22.itch.io/swordofeldoia"class="btn-primary"target="_blank">
 🎮 Visit Game
 </a>
+
+<button type="button" class="btn-secondary" id="designPrototypeBtn">🧩 Design Prototype</button>
 
 <a href="Gameplay_Level_Design.html"class="btn-secondary">📄 More Details</a>
 
@@ -202,10 +205,123 @@ Game Design • Level Design • Unity • Playtesting
 
 <!-- RIGHT SIDE -->
 <div class="project-right reveal-right">
-<img src="images/SOE1.png" alt="Monster Buddy AR">
+  <img src="images/SOE1.png" alt="Sword of Eldoria key art">
+</div>
+
+</div>
+
+<!-- ===== Design Prototype Modal ===== -->
+<div class="design-modal-overlay" id="designModalOverlay">
+  <div class="design-modal design-showcase">
+
+    <button type="button" class="design-modal-close" id="designModalClose">← Back</button>
+
+    <h3 class="showcase-heading">Player Onboarding Through Progressive Quest Design</h3>
+
+    <div class="showcase-slider-wrapper">
+
+      <button class="arrow-btn arrow-left" id="designPrev" aria-label="Previous view">‹</button>
+
+      <div class="showcase-viewport">
+        <div class="showcase-track" id="designTrack">
+
+          <!-- SLIDE 1 — Design wireframe -->
+          <div class="showcase-slide">
+            <img src="images/starter-area-wireframe.png" alt="Starter Area wireframe layout">
+
+            <button class="design-icon" style="top:59.1%; left:51%;" aria-label="The player"
+              data-tip-title="The player"
+              data-tip-desc="The player spawns at the centre of the area, giving them a brief moment to orient themselves and observe the surrounding environment before approaching the NPC.">
+              <span aria-hidden="true">🥷</span>
+            </button>
+
+            <button class="design-icon" style="top:43.5%; left:64.5%;" aria-label="NPC"
+              data-tip-title="NPC"
+              data-tip-desc="The NPC uses a hand-waving animation to attract the player's attention and provide a clear visual cue for interaction. Approaching the NPC triggers the dialogue and starts the first quest.">
+              <span aria-hidden="true">🧚</span>
+            </button>
+
+            <button class="design-icon" style="top:59%; left:32.9%;" aria-label="Enemy"
+              data-tip-title="Enemy"
+              data-tip-desc="A small group of enemies is placed near the player's initial path to introduce combat early without overwhelming a new player. Their movement also creates visual activity that encourages the player to investigate the area.">
+              <span aria-hidden="true">💀</span>
+            </button>
+
+            <button class="design-icon" style="top:42.3%; left:38.3%;" aria-label="Treasure Box"
+              data-tip-title="Treasure Box"
+              data-tip-desc="The treasure chest is positioned between the NPC and enemy encounter to provide a visible reward and recovery opportunity. The light acts as a subtle environmental cue, encouraging exploration without directly forcing the player toward it.">
+              <span aria-hidden="true">📦</span>
+            </button>
+
+            <button class="design-icon" style="top:56.2%; left:26.9%;" aria-label="Enemy Spawn Location"
+              data-tip-title="Enemy Spawn Location"
+              data-tip-desc="The three enemies are positioned on the left side to create the player's first controlled combat encounter. They are introduced after the loot and equipment quests, ensuring players have learned how to obtain and equip gear before entering combat.">
+              <span aria-hidden="true">⚰️</span>
+            </button>
+          </div>
+
+          <!-- SLIDE 2 — Actual in-game screenshot -->
+          <div class="showcase-slide">
+            <img src="images/starter-area-ingame.png" alt="Starter Area in the actual game">
+
+            <button class="design-icon" style="top:56.2%; left:56.3%;" aria-label="The player"
+              data-tip-title="The player"
+              data-tip-desc="The player spawns at the centre of the area, giving them a brief moment to orient themselves and observe the surrounding environment before approaching the NPC.">
+              <span aria-hidden="true">🥷</span>
+            </button>
+
+            <button class="design-icon" style="top:42.5%; left:85.9%;" aria-label="NPC"
+              data-tip-title="NPC"
+              data-tip-desc="The NPC uses a hand-waving animation to attract the player's attention and provide a clear visual cue for interaction. Approaching the NPC triggers the dialogue and starts the first quest.">
+              <span aria-hidden="true">🧚</span>
+            </button>
+
+            <button class="design-icon" style="top:40.2%; left:12.75%;" aria-label="Enemy"
+              data-tip-title="Enemy"
+              data-tip-desc="A small group of enemies is placed near the player's initial path to introduce combat early without overwhelming a new player. Their movement also creates visual activity that encourages the player to investigate the area.">
+              <span aria-hidden="true">💀</span>
+            </button>
+
+            <button class="design-icon" style="top:43.5%; left:41.5%;" aria-label="Treasure Box"
+              data-tip-title="Treasure Box"
+              data-tip-desc="The treasure chest is positioned between the NPC and enemy encounter to provide a visible reward and recovery opportunity. The light acts as a subtle environmental cue, encouraging exploration without directly forcing the player toward it.">
+              <span aria-hidden="true">📦</span>
+            </button>
+
+            <button class="design-icon" style="top:55.6%; left:13.2%;" aria-label="Enemy Spawn Location"
+              data-tip-title="Enemy Spawn Location"
+              data-tip-desc="The three enemies are positioned on the left side to create the player's first controlled combat encounter. They are introduced after the loot and equipment quests, ensuring players have learned how to obtain and equip gear before entering combat.">
+              <span aria-hidden="true">⚰️</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="design-tooltip-shared" id="sharedTooltip">
+        <strong id="sharedTooltipTitle"></strong>
+        <span id="sharedTooltipDesc"></span>
+      </div>
+
+
+      <button class="arrow-btn arrow-right" id="designNext" aria-label="Next view">›</button>
+
+    </div>
+
+    <div class="slider-dots showcase-dots">
+      <span class="slider-dot design-dot active" data-slide="0"></span>
+      <span class="slider-dot design-dot" data-slide="1"></span>
+    </div>
+
+    <div class="design-summary">
+      <h4>Design Summary</h4>
+      <p>The Starter Area is designed as a progressive onboarding experience that introduces the player's core systems step by step. The player first learns to loot items from a treasure chest, then equips their new equipment through the inventory system before entering their first combat encounter. After combat, players learn to manage HP and stamina using consumable items, followed by learning the skill system. Completing the five Starter Quests gives players a foundation in exploration, equipment, combat, resource management, and abilities before progressing to Part 2.</p>
+    </div>
+
+  </div>
+</div>
+
 <script src="script.js"></script>
-</div>
-</div>
 </section>
 </main>
 <!-- ================= FOOTER ================= -->
