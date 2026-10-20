@@ -1613,3 +1613,29 @@ li  { margin-bottom: 8px; font-size: 18px; }
   .project-sections-row { gap: 0.5rem; }
   .project0-features li { font-size: 0.74rem; }
 }
+
+/* ================================================
+   GAMEPLAY & LEVEL DESIGN — spacing between
+   project showcase containers (2D game / Sword Of Eldoria)
+   ใช้ id เพื่อไม่กระทบ .project-section ในหน้า QA
+   ================================================ */
+
+#project-2d,
+#project {
+  padding: 60px 20px;
+  margin: 0 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+#project-2d { margin-bottom: 80px; }
+
+@media (max-width: 768px) {
+  #project-2d,
+  #project {
+    padding: 30px 16px;
+    margin: 0 10px;
+  }
+
+  #project-2d { margin-bottom: 40px; }
+}

@@ -2,7 +2,7 @@
    SCROLL NAV — section dots
    ================================================ */
 
-const sections    = document.querySelectorAll("#hero, #role, #experience, #project");
+const sections    = document.querySelectorAll("#hero, #role, #experience, #project-2d, #project");
 const dots        = document.querySelectorAll(".dot");
 const scrollUpBtn = document.getElementById("scrollUp");
 const scrollDownBtn = document.getElementById("scrollDown");
